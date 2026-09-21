@@ -1,0 +1,143 @@
+# 本题库为原创编写：话题参考自互联网公开的商务英语通用场景与行业公开资料，
+# 题目文本、考察点、答题思路与追问均为本项目原创改写，不包含任何来源的原文摘录；
+# 仅供个人学习交流，如涉侵权请联系仓库 Issues，将立即下架。
+key: meetings-core
+title: 外企会议通用 16 题（周会同步 · 讨论 · 决策）
+note: >
+  模拟外企日常工作会议的完整流程：开场与同步 → 数据与观点 → 决策与推动 → 收尾与跟进。
+  每题"答题思路"给的是「在会议室里怎么说才有分量」的结构：结论先行、数字支撑、给选项、给建议、要决策。
+  配合「会议主持人」角色使用效果最佳：先选 Olivia（会议主持人），再选本套题开练；
+  可与行业题集（如「美妆外企会议 20 题」）搭配，先练通用骨架，再练行业内容。
+questions:
+  # ============ A. 开场与同步 ============
+  - id: m01
+    round: 周会同步
+    category: 开场与自我介绍
+    text: "Let's do a quick round of intros — tell us who you are, what you own, and one thing this group should know about your workstream."
+    intent: 会议式自我介绍：30 秒建立「你是谁、负责什么、有什么值得关注」的印象，而不是背简历。
+    hint: 三句话结构：①身份 + 职责一句话（"I lead X for the Y team"）；②你负责的项目/指标现状一句话；③抛一个钩子（本周最重要的进展或风险，给别人继续问你的理由）。别复述完整履历，会议里没人听三段式自我介绍。
+    followups:
+      - "And if your workstream needs a decision today, who should we turn to?"
+  - id: m02
+    round: 周会同步
+    category: 议程与角色
+    text: "Before we kick off — is there anything you want to add to today's agenda, or anything you want to flag for this group?"
+    intent: 会前表达：主动争取议程席位、提前释放信号（flag），考验议程意识。
+    hint: 二选一就好：要么加一项（一句话说明议题 + 为什么此刻重要 + 需要谁在场），要么 flag 一个风险（先说结论 "One flag before we start"）。句式要礼貌且直接："Can we add five minutes on…"、"One thing to be aware of…"。不要报流水账。
+    followups:
+      - "How much time do you need for that, and what decision do you want out of it?"
+  - id: m03
+    round: 周会同步
+    category: 进度汇报
+    text: "Walk us through where your workstream stands this week — what's on track, and what's not."
+    intent: 标准周会同步：结论先行的「红黄绿」汇报，不让听者自己找重点。
+    hint: 用「整体判断 → 证据 → 唯一需要关注的点」结构：先给 green/yellow/red，再各给一句证据；对落后的部分给「一个数字 + 一句原因 + 一句对策」，不要绕。收尾让主持人能立刻接话："The only thing I need this group on is…"。
+    followups:
+      - "You mentioned one item is behind — how far, and what would it take to recover?"
+  - id: m04
+    round: 周会同步
+    category: 阻塞与支持
+    text: "What's blocking you right now, and what do you need from this room to unblock it?"
+    intent: 主动暴露阻塞 + 清晰提出请求（ask）——外企会议里最被看重的能力之一。
+    hint: 结构：阻塞是什么（一句）→ 影响（数字/日期）→ 具体请求（要谁、做什么、什么时候要）。请求必须具体到人和动作，泛泛说「资源不够」没有信息量。示例句式："To unblock this, I need approval from X by Friday."
+    followups:
+      - "And if we can't give you that by Friday — what's plan B?"
+  # ============ B. 数据与观点 ============
+  - id: m05
+    round: 数据回顾
+    category: 数据表达
+    text: "Give us the headline numbers from last month — and tell us the story behind them, not just the figures."
+    intent: 会议数据表达：headline 先行 + 因果解释，防止「念报表」。
+    hint: 先给 2–3 个 headline（对比目标/上期），再给一句「数字背后的故事」（哪个因素在拉动、哪个在拖累）。每个数字都带基准（vs plan / vs last year），否则数字没有意义。最后落到一句 "so what"——对业务意味着什么。
+    followups:
+      - "Which single number should we be worried about, and why?"
+  - id: m06
+    round: 数据回顾
+    category: 解释波动
+    text: "The numbers dropped 12% week over week. What's driving that, and what do you recommend?"
+    intent: 面对不利数字的会议应对：不慌乱、不甩锅，给出归因和行动。
+    hint: 三段式：①先给整体判断（"Half of it is expected, half isn't."）；②拆解驱动因素（量的因素 vs 结构因素，最好带比例）；③给建议（做什么、谁做、观察什么指标验证）。承认不确定也是加分项："We'll know more by Wednesday when the X data lands."
+    followups:
+      - "Is this a blip or a trend? What evidence would change your mind?"
+  - id: m07
+    round: 专项讨论
+    category: 表达观点
+    text: "This group is split on the approach. Where do you stand, and why?"
+    intent: 在分歧中清晰表态：有立场、有理由、有让步空间。
+    hint: 直接表态（"I'd go with option A."）→ 两个理由（一个商业理由 + 一个执行可行性）→ 说明你愿意接受的边界（"If the budget really can't stretch, then B with X."）。避免「both have pros and cons」式骑墙——会议需要你的判断。
+    followups:
+      - "What would it take for you to change your mind?"
+  - id: m08
+    round: 专项讨论
+    category: 异议与协商
+    text: "I'll push back a little — the SEO plan has been flat for two quarters. Why should we keep investing there?"
+    intent: 接住直接质疑：先接后转，用证据回应而不是情绪。
+    hint: 结构：先接住（"Fair challenge."）→ 给事实（两个季度里哪些指标其实在变化，用数字）→ 重新定义问题（"The question isn't A vs B, it's which produces cheaper learning."）→ 给带条件的提议（设检查点）。切忌防守式反驳，也别全盘认输。
+    followups:
+      - "So if we cap the spend at half, what do you protect first?"
+  - id: m09
+    round: 专项讨论
+    category: 澄清与重述
+    text: "Some of that was hard to follow — can you walk us through your proposal again, but simpler? One sentence, one number, one ask."
+    intent: 把复杂提案压成会议室能消化的最小结构；也考临场重述能力。
+    hint: 三件套：一句话主张（"My proposal is to X."）→ 一个关键数字（成本/收益/时间）→ 一个明确请求（要什么决定、什么时候要）。重述时不要抱怨听者（避免 "as I said"），也别重复全部细节——这正是电梯测试的练法。
+    followups:
+      - "If we only approve the first step, what does that look like?"
+  - id: m10
+    round: 数据回顾
+    category: 向上沟通
+    text: "Your manager asked me how things are really going. What should I tell them?"
+    intent: 通过第三方传递信息时的向上沟通：诚实、有分寸、数据化。
+    hint: 借机给出「官方版本」的升级：肯定进展（带数字）→ 坦率点出最大的一个风险及你的应对 → 说明你需要上级做什么/不需要做什么。杜绝两个极端：报喜不报忧，或借机吐槽。
+    followups:
+      - "And the part you're not putting in the deck?"
+  # ============ C. 决策与推动 ============
+  - id: m11
+    round: 决策会
+    category: 方案与取舍
+    text: "We have two options on the table: cut the scope and ship on time, or keep the scope and delay by a month. Which do you choose, and what's the cost of being wrong?"
+    intent: 会议决策表达：明确选择 + 权衡 + 风险语言，敢于承担判断。
+    hint: 结构：先选（"I'd cut scope."）→ 理由（用户价值/现金/信誉哪个权重最高）→ 代价说明（哪里可控、哪里不可控）→ 缓解措施（设检查点）。"如果错了怎么办"提前一句："If X happens, we reassess in week N." 就稳了。
+    followups:
+      - "Who needs to hear that decision today, and who will push back hardest?"
+  - id: m12
+    round: 决策会
+    category: 资源争取
+    text: "You're asking for two more engineers. Make the case in thirty seconds — what do we get, and when?"
+    intent: 资源争取的电梯陈述：投入-产出-时间点三件套。
+    hint: 三句：要什么（2 名工程师，什么档期）→ 换来什么（哪个指标、多大提升、什么时候见效，给数字区间）→ 不给的代价（延迟多少 / 损失什么机会）。不要用「团队很辛苦」当论据，用业务结果说话。
+    followups:
+      - "What if we can only give you one engineer and a contractor?"
+  - id: m13
+    round: 决策会
+    category: 跨团队协作
+    text: "The regional teams say they weren't consulted early enough. How do you want to fix the way we work together?"
+    intent: 跨部门矛盾的修复表达：认领问题、给机制，不追责不甩锅。
+    hint: 认可对方合理性（"They have a point on timing."）→ 认领你这边可以改的一点（具体）→ 给新机制（什么节奏、和谁、以什么形式对齐，如提前两周的 review）→ 给一个立刻可启动的动作。避免「以后多沟通」这种空承诺。
+    followups:
+      - "And who owns that new rhythm — you or the regional leads?"
+  # ============ D. 收尾与跟进 ============
+  - id: m14
+    round: 收尾跟进
+    category: 行动项
+    text: "To close the loop — give us the actions from your side, with owners and dates."
+    intent: 会议收尾的标准动作：把讨论转成行动项（who does what by when）。
+    hint: 固定句式逐条说："Action one — I'll send the revised plan to X by Thursday."；每条都带 owner + 动作 + 日期；属于别人但需要推动的也点名（"I'll chase Y for the approval"）。最后确认 "Anything I've missed?" 把球交回主持人。
+    followups:
+      - "Which of these is the riskiest to deliver on time?"
+  - id: m15
+    round: 收尾跟进
+    category: 风险提示
+    text: "Before we wrap — what are the top two risks on this plan, and what's your mitigation?"
+    intent: 风险表达的会议标准结构：风险 + 影响 + 缓解 + 触发条件。
+    hint: 每个风险两句话：是什么 + 影响面（数字/时间）；再说缓解动作和「如果发生会做什么」（trigger + response）。选择最值得占用会议注意力的两个，而不是罗列清单。
+    followups:
+      - "Which one keeps you up at night — and when would you escalate?"
+  - id: m16
+    round: 收尾跟进
+    category: 会后跟进
+    text: "Send us a one-paragraph recap by Friday. What should it include so everyone leaves this meeting aligned?"
+    intent: 会后备忘（recap）的意识：决定、行动项、悬而未决的问题。
+    hint: 段落结构：①一句话总结会议结论；②行动项（谁/做什么/什么时候）；③未决问题 + 下一步怎么关掉。当场确认发送时间与范围："I'll send it to the group by Friday EOD."
+    followups:
+      - "And what goes into the part you don't send to everyone?"

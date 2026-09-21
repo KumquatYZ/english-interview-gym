@@ -62,14 +62,15 @@ Every session feeds your streaks and stats; every question keeps a history, so y
 
 | Feature | What it does | Where |
 |---|---|---|
-| 🎙️ Mock interviews | 3 personas × 3 question sets, voice Q&A with natural follow-ups | Home → "Choose your AI tutor" |
+| 🎙️ Mock interviews | 4 roles × 5 question sets, voice Q&A with natural follow-ups | Home → "Choose your AI tutor" |
+| 💼 Meeting practice | Meeting-host persona (Olivia) + original meeting banks: general meetings / beauty industry | Home → pick a set (💼 / 💄) |
 | 💡 Sample answers | A 30–45 s model answer per question: generic / personalized | Chat → "📖 Sample answer" |
 | 🔍 Click-to-lookup | IPA · contextual meaning · examples · pronunciation · favourites | Any word, anywhere |
 | ✍️ Instant feedback | Correction / Upgrade / Revision + 1–10 score | Automatic after each answer |
 | 📋 Review report | Five-dimension scoring + next-focus + errorbook | Top-right "Review" |
 | 🔥 Streaks & progress | Streak days · daily goal ring · review progress · 14-day calendar | Home check-in panel |
 | ⭐ Favourites & daily review | Paged word library (sort / delete) + ratio-based daily recall | Home → "⭐ Favourites" |
-| 🗂 Question card wall | 82 cards: status / best score / trend / per-question history | Home → "Choose a question set" |
+| 🗂 Question card wall | 120 cards: status / best score / trend / per-question history | Home → "Choose a question set" |
 | 📄 Resume import | Unlocks personalized answers grounded in your real experience | "📄 My resume" |
 
 ## Quick start
@@ -104,8 +105,8 @@ Open the app → top-right "**⚙️ 设置 (Settings)**" → fill in two groups
 
 **Step 3 · Your first session (~10 minutes)**
 
-1. "选择你的 AI 导师 / Pick your AI tutor" → tap a tutor to **preview the voice**, pick a persona;
-2. "选择题集 / Question sets" → start with `baseline-8` (8-question warm-up);
+1. "选择你的 AI 导师 / Pick your AI tutor" → tap a tutor to **preview the voice**, pick a persona (pick Olivia for meeting practice);
+2. "选择题集 / Question sets" → start with `baseline-8` (8-question warm-up); for meetings pick "外企会议通用 16 题" or "美妆行业会议 22 题";
 3. Open any question → "🎙 从这题开练 / Practice this" → tap the mic (or press Space) and speak;
 4. Tap the mic again when done → review the transcript, feedback cards and score → next question;
 5. When finished, click "复盘 / Review" (top-right) for the full session report.
@@ -215,8 +216,8 @@ Where to configure: in-app "⚙️ 设置 (Settings) → 🎙️ 语音服务", 
 
 **What it does**: a real back-and-forth conversation — the interviewer speaks a question, you answer out loud, and your speech is transcribed automatically before the follow-up or next question.
 
-- 3 personas (`materials/personas/`): `hr-friendly` (corporate HR screen), `tech-lead` (technical deep-dive), `stress` (pressure round); each ships with its positioning, evaluation focus, probing strategy and a realistic interview-dialogue few-shot — adapt them to your own target role;
-- 3 question sets: `baseline-8` (8 warm-up questions), `interview-core` (14 core questions), `mnc-60` (60 high-frequency big-tech questions).
+- 4 roles (`materials/personas/`): `hr-friendly` (corporate HR screen), `tech-lead` (technical deep-dive), `stress` (pressure round), `meeting-host` (cross-functional meetings); each ships with its positioning, evaluation focus, probing strategy and a realistic dialogue few-shot — adapt them to your own target role;
+- 5 question sets: `baseline-8` (8 warm-up questions), `interview-core` (14 core questions), `mnc-60` (60 high-frequency big-tech questions), `meetings-core` (16 general business-meeting questions), `cosmetics-meetings` (22 beauty-industry meeting questions; topics drawn from public industry coverage, all questions originally written).
 
 **How to use**: pick a persona → pick a set → "🎙 Practise from this question" → click the mic (or press Space) → click again to finish → read the feedback → next question. Two answering modes are available in the chat header ("speak freely / read the sample aloud"); you can skip a question or end the session with "Review" at any time.
 

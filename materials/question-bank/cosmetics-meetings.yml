@@ -1,0 +1,193 @@
+# 本题库为原创编写：行业话题提炼自互联网公开的行业报道与公开法规信息（如公开市场报告、
+# 公开新闻与公开政策资料的"话题层面"），题目文本、考察点、答题思路与追问均为本项目原创改写，
+# 不包含任何来源的原文摘录，也不代表任何机构观点；仅供个人学习交流，
+# 如涉侵权请联系仓库 Issues，将立即下架。
+key: cosmetics-meetings
+title: 美妆外企会议 22 题（新品 · 渠道 · 供应链 · 合规）
+note: >
+  模拟跨国美妆公司（护肤 / 彩妆）的典型会议场景：新品上市评审、渠道与营销复盘、
+  市场洞察、供应链与质量、法规合规与可持续、季度业务复盘。
+  练习目标是把"会议英语"用在行业内容上：结论先行、数字支撑、给选项、要决策、闭环行动项。
+  建议搭配「会议主持人 Olivia」使用；先练「外企会议通用 16 题」打骨架，再用本套题练行业实战。
+questions:
+  # ============ A. 新品与上市 ============
+  - id: c01
+    round: 新品上市会
+    category: 上市状态同步
+    text: "The launch is six weeks out. Give us a status across formula, packaging and registration — where's the risk?"
+    intent: 上市倒排期的跨职能状态同步：三条线各一句话 + 单点风险判断。
+    hint: 每条线一句话（状态 + 证据），最后落到「一个风险点 + 应对」。自然使用行业词：formula lock, stability testing, artwork approval, registration dossier, first production run。把「感觉来不及」换成「哪个节点最紧、它的前置条件是什么」。
+    followups:
+      - "If registration slips a week, what's the first thing you move?"
+  - id: c02
+    round: 新品上市会
+    category: 上市评审
+    text: "Before we approve the launch — sell me the positioning. Who's the target consumer, and why will they pick us over what's already on the shelf?"
+    intent: 上市评审的卖点陈述：消费者定义 + 差异化 + 证据。
+    hint: 结构："For [who], our product is the [category] that [benefit], because [proof]."；消费者用行为画像而不是年龄标签；差异化给一句 vs 货架上直接竞品的对比；证据落到成分/测试/数字。别堆形容词（premium、innovative 这类词在评审会上等于没说）。
+    followups:
+      - "What would make you kill this launch?"
+  - id: c03
+    round: 渠道与定价会
+    category: 定价策略
+    text: "The regional team proposes a 15% price cut to hit volume targets. Argue the case for holding price — or tell us why you'd take the cut."
+    intent: 定价辩论：把价格当策略而不是促销工具，展示商业推理。
+    hint: 先选立场再给论据。持价派可用：价格弹性小 + 降价稀释定位 + 用赠品/sampling 替代降价；让步派可用：清库存 + 抢货架 + 竞品贴身对战。关键是用数字说代价（毛利 vs 量的换算），并给替代方案（bundle、GWP、会员专享）。
+    followups:
+      - "What does the category price map look like if everyone follows?"
+  # ============ B. 渠道与营销 ============
+  - id: c04
+    round: 渠道与营销会
+    category: 渠道策略
+    text: "We can't fund everything this quarter. Tmall, Douyin, or key accounts — where would you put the next million, and why?"
+    intent: 渠道预算取舍：平台特性理解 + 与阶段目标的匹配。
+    hint: 每渠道一句话画像（Tmall=品牌资产与搜索承接；Douyin=内容发现与爆发；key accounts=高端形象与试用），再结合「本季度目标」选择：要新品冷启动曝光 → 内容平台；要转化与复购 → 承接平台。给指标预期（ROI/CVR 的改善幅度）和检查点。
+    followups:
+      - "If Douyin spend doesn't pay back in six weeks, what then?"
+  - id: c05
+    round: 渠道与营销会
+    category: 直播运营
+    text: "Our livestream conversion dropped from 4% to 2.5% this month. What's your read, and what's the fix?"
+    intent: 直播数据问题的归因 + 对策：像运营负责人一样思考。
+    hint: 拆漏斗（流量结构 / 观看停留 / 转化）各给一句假设 + 一个可查的证据；对策按「本周能改」和「下月要建」分开。自然使用：viewer retention, offer mechanics, host script, traffic mix, AOV。
+    followups:
+      - "The host says the traffic is fine — how do you check that claim?"
+  - id: c06
+    round: 渠道与营销会
+    category: 内容与 KOL
+    text: "The creator budget is being questioned upstairs. How do you prove the spend is working?"
+    intent: 面对「花出去的钱怎么证明」：衡量框架的表达。
+    hint: 给三层证明：①直接指标（内容互动、搜索量、加购）；②归因（专属码/链接、素材复用率）；③长期资产（品牌搜索、复购、素材库）。承认归因局限，主动提出实验设计（分城市/对照组）会显得专业。
+    followups:
+      - "Which creators would you cut tomorrow if you had to?"
+  - id: c07
+    round: 渠道与营销会
+    category: 促销决策
+    text: "Douyin is pushing us to join a deep-discount live event during the festival. Pros, cons, and your decision."
+    intent: 大促决策：把「平台压力」转成结构化权衡。
+    hint: 利：冲量、平台关系、拉新；弊：价格锚点、渠道冲突、利润。给数字：折扣深度 vs 量的弹性、对其它渠道的影响。决策给条件化版本："Join, but with guardrails — discount ≤ X, dedicated stock, exclusive SKU."
+    followups:
+      - "What do we tell the key-account team if they complain?"
+  # ============ C. 市场洞察与竞争 ============
+  - id: c08
+    round: 市场洞察会
+    category: 消费者洞察
+    text: "What did the latest consumer study actually tell us — and what should the brand do differently because of it?"
+    intent: 研究洞察转行动：报告不能白读，要给出 so what。
+    hint: 结构：一个 headline 洞察（消费者行为变化）→ 一个反直觉发现 → 一个行动建议（产品/内容/渠道任选其一，给出第一步）。避免罗列十个数据点；评审会只想听「变化与行动」。
+    followups:
+      - "Which finding do you trust the least, and why?"
+  - id: c09
+    round: 市场洞察会
+    category: 竞品应对
+    text: "A local brand just launched a near-identical serum at 40% lower price. What's our response plan?"
+    intent: 竞品贴身战的应对：不情绪化、有战术框架。
+    hint: 先判断威胁等级（受众重合度、渠道冲突、是否价格战型）；再给三层响应：①不动（讲清为什么不跟）；②差异化（配方/服务/社群）；③防守性动作（套装、会员、渠道专供）。给出「90 天内看什么指标决定是否加码」。
+    followups:
+      - "If they copy our next launch too, does the strategy change?"
+  - id: c10
+    round: 市场洞察会
+    category: 品牌建设
+    text: "The market is slowing and local brands are gaining share. Should we spend more on brand, more on performance — or hold? Take a position."
+    intent: 增长放缓期的预算辩论：立场 + 逻辑 + 可执行条件。
+    hint: 先给判断（不是「都要」，而是排序）：快消下滑期通常保 performance 基本盘、把品牌预算集中到 1–2 个高确定性的资产（如一个记忆点主张、一个大单品）；给数字假设（预算挪多少、预期什么变化），给复查点（什么数据出现就调整）。
+    followups:
+      - "How do you keep the brand team from reading this as a demotion?"
+  - id: c11
+    round: 市场洞察会
+    category: 品类机会
+    text: "Fragrance is the fastest-growing category for us. Should we double down, or is it a bubble? What's your recommendation?"
+    intent: 品类机会判断：增长与风险的两面表达。
+    hint: 支撑面（增速、复购、内容属性强、客单高）与风险面（流行周期、供应链长、货损）各给两点；再给「小步快跑」建议：先做限量/联名验证，设定成功指标（售罄率、复购意向）再决定加注。表态要有点赞也要有底线。
+    followups:
+      - "What's the smallest test that would tell us the most?"
+  # ============ D. 供应链与质量 ============
+  - id: c12
+    round: 供应链运营会
+    category: 供应链
+    text: "The pump supplier just told us the component is delayed three weeks. Walk us through the impact and your options."
+    intent: 供应链突发事件的会议应对：影响面 + 选项 + 建议。
+    hint: 影响量化：影响哪些 SKU、多少量、卡在哪个上市/活动节点；选项至少三个（加钱追单空运 / 启用备选供应商 / 调整包装方案），按「成本-时间-风险」各评一句；最后给推荐 + 需要谁拍板。用词：lead time, MOQ, safety stock, air freight, qualification。
+    followups:
+      - "What does air freight do to the unit economics?"
+  - id: c13
+    round: 供应链运营会
+    category: 库存管理
+    text: "We're sitting on 45 days of excess stock on last season's SKUs. What do you propose?"
+    intent: 库存问题的方案设计：清库存方式与代价的权衡。
+    hint: 给分层方案：A 款（仍可卖）→ 内容+会员内购消化；B 款（滞销）→ 捆绑/赠品/员工内购；C 款（临期）→ 定向渠道快速出清。每层给预期回收率和周期；并给出预防机制（预测复盘、补货门槛）。别只说「打折清仓」——会议要看结构。
+    followups:
+      - "What's the accounting hit we should be ready for?"
+  - id: c14
+    round: 供应链运营会
+    category: 质量与客诉
+    text: "We're seeing more complaints about the new texture. Product and QA are pointing at each other. What's your call?"
+    intent: 质量争议的主持式处理：先事实、后机制，稳住会议。
+    hint: 三步：①把问题定义清楚（客诉率多少、集中在哪个批次/渠道）；②要事实不要立场（让各方各给一个数据）；③定机制（谁在何时给根因报告 + 临时对策保护消费者）。千万别说「这不是我的责任」，会议需要能推进的人。
+    followups:
+      - "Do we pause the next batch while we investigate?"
+  # ============ E. 合规与可持续 ============
+  - id: c15
+    round: 合规专题会
+    category: 法规变化
+    text: "EU packaging rules are changing — recyclability, recycled content, refills are all on the table. How does this change our roadmap, and what do you need approved?"
+    intent: 法规变化的业务翻译：把合规要求转成路线图影响与批准请求。
+    hint: 结构：新规的业务含义三条（包装要可回收 / 再生料比例 / 补充装义务）→ 影响我们哪几条包装线 → 需要批准的 1–2 个决定（预算/供应商/时间表）。不必引用法条编号（那是法规同事的活），展示的是「影响 + 决策请求」。
+    followups:
+      - "Which markets first, and what's the cost per unit?"
+  - id: c16
+    round: 合规专题会
+    category: 功效宣称
+    text: "Marketing wants to claim 'clinically proven' and '24-hour hydration'. What can we actually say, and what's the substantiation plan?"
+    intent: 功效宣称的合规表达：营销与证据之间的专业沟通。
+    hint: 原则：每个 claim 都对应一类测试证据（消费者测试 vs 仪器测试；证据强度决定话术强度）；把「能说 / 需补测试才能说 / 不能说」分三档，给计划（测试周期、成本量级、谁来做）。不用绝对化词（cure、permanent）；你给的是「营销要准备什么」，法律细节交给法规同事。
+    followups:
+      - "And for the China market — does the claim list change?"
+  - id: c17
+    round: 合规专题会
+    category: 可持续商业论证
+    text: "The board wants a refillable line. Make the business case — or tell us why it shouldn't be a priority yet."
+    intent: 可持续命题的商业化表达：敢做判断、算得清账。
+    hint: 两个方向都给算账逻辑：支持 = 溢价潜力 + 复购率 + 品牌资产 + 渠道话题度；反对 = 重灌装物流/门店配合的成本 + 消费者实际复用率存疑 + 先用「轻动作」（减重、再生料）拿到快速成果。建议：先给立场，再给 2–3 个数字假设，提出试点（单城市/单渠道）验证。
+    followups:
+      - "What result from the pilot would convince you?"
+  # ============ F. 跨部门与复盘 ============
+  - id: c18
+    round: 跨部门协作会
+    category: 跨部门主持
+    text: "R&D says six months for the reformulation; Marketing says three. You're chairing — how do you resolve it, and by when?"
+    intent: 跨部门僵局的会议主持：当「裁判」而不是传声筒。
+    hint: 澄清分歧的真实来源（范围？资源？风险偏好？）→ 拆成可选路径（全量重配 vs 微调 vs 分批上市）→ 用决策标准收敛（上市窗口值多少钱 vs 风险成本）→ 定拍板时间和负责人。表现结构感比表现意见更重要。
+    followups:
+      - "Who makes the final call, and what do you need from them?"
+  - id: c19
+    round: 业务复盘会
+    category: 营销复盘
+    text: "The campaign underdelivered by 30%. Walk us through the post-mortem — what worked, what didn't, and what changes next time?"
+    intent: 复盘会的标准表达：不找借口、结构清晰、结论可执行。
+    hint: 结构：结果对比（目标 vs 实际，一句）→ 三个驱动因素（可控/不可控分开）→ 收获（what worked，要诚实）→ 下次的三个改变（具体到动作）。自然使用：awareness, consideration, conversion, media mix, creative fatigue。
+    followups:
+      - "Which mistake was preventable, and who owns the fix?"
+  - id: c20
+    round: 业务复盘会
+    category: 季度复盘
+    text: "Quarterly review: we're flat against a +15% target. What happened, and what's the plan for next quarter?"
+    intent: QBR 式陈述：诚实归因 + 清晰的下季度打法。
+    hint: 三块：①发生了什么（市场/竞争/执行各一条，用数字）；②结论（哪些假设错了）；③下季度三个抓手（各配一个指标和投入）。不要用「大环境」解释一切，评审会要听的是「你学到什么、准备怎么改」。
+    followups:
+      - "What would you stop doing next quarter?"
+  - id: c21
+    round: 业务复盘会
+    category: 行动项收尾
+    text: "To close the loop — actions, owners, dates. And tell us what you need from me personally."
+    intent: 会议收尾 + 向上要支持：行动项清单 + 一个明确 ask。
+    hint: 行动项用固定句式逐条过（owner + 动作 + 日期）；最后给一个「需要主持人本人」的请求，一句话、带截止时间。这是展示闭环能力的黄金机会。
+    followups:
+      - "Which item needs me personally, not just my team?"
+  - id: c22
+    round: 业务复盘会
+    category: 一句话总结
+    text: "One last thing — in one sentence: what should this group remember from your part of the meeting?"
+    intent: 收尾一句话总结：把复杂讨论压缩成 memorable 的主张。
+    hint: 模板："[做什么] to [达到什么结果] — and I need [什么] by [什么时候]." 这是电梯测试的终极版；练出你自己的「一句话工程」。别重复细节，别用「大概/可能」这类模糊词。
+    followups: []

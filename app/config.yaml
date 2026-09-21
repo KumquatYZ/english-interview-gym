@@ -37,6 +37,7 @@ tts:
     hr-friendly: English_Graceful_Lady
     tech-lead: English_Trustworth_Man
     stress: English_ManWithDeepVoice
+    meeting-host: English_ConfidentWoman
   cache: true
 
 tools:

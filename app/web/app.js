@@ -7,11 +7,14 @@ const TUTORS = {
   "hr-friendly": { emoji: "👩‍💼", en: "Grace", sample: "Hi, I'm Grace. Let's have a friendly chat about your background. Take your time." },
   "tech-lead":   { emoji: "👨‍🔬", en: "Alan",  sample: "Hi, I'm Alan, the hiring manager. I'll dig into the technical details of your work." },
   "stress":      { emoji: "🧔",   en: "Victor", sample: "Let's keep this tight. I'll push back on your answers, that's my job." },
+  "meeting-host":{ emoji: "🧑‍💼", en: "Olivia", sample: "Hi, I'm Olivia. Let's get started — I'll hand the floor to you for the first update." },
 };
 const SETMETA = {
   "baseline-8":    { ico: "📊", desc: "摸底测试 · 覆盖面试全流程" },
   "interview-core":{ ico: "🎯", desc: "面试核心高频 14 题" },
   "mnc-60":        { ico: "🏢", desc: "外企 60 题 · 商务英语深度" },
+  "meetings-core":     { ico: "💼", desc: "外企会议通用 16 题 · 周会 / 讨论 / 决策" },
+  "cosmetics-meetings":{ ico: "💄", desc: "美妆行业会议 22 题 · 新品 / 渠道 / 合规" },
 };
 
 const S = {
