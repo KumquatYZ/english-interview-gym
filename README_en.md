@@ -75,20 +75,22 @@ Every session feeds your streaks and stats; every question keeps a history, so y
 
 ## Quick start
 
-> 📖 **User guide** (17 pages, all screenshots included): [DOCX download](docs/USER-GUIDE.docx) · [PDF download](docs/USER-GUIDE.pdf)
+> 📖 **User guide** (21 pages, all screenshots included): [DOCX download](docs/USER-GUIDE.docx) · [PDF download](docs/USER-GUIDE.pdf)
 
 Two paths — pick one: **Option A (recommended, zero install)**: download the portable build, double-click, done. **Option B**: run from source (macOS / if you want to modify the code).
 
 ### Option A (recommended, zero install): portable build
 
-**Step 1 · Download** — grab your platform's file from [**Releases (latest)**](https://github.com/KumquatYZ/english-interview-gym/releases/latest):
+**Step 1 · Download** — grab the **latest** build for your platform from the [**Releases page**](https://github.com/KumquatYZ/english-interview-gym/releases) (zip filenames include the version number):
 
 | Platform | File | How to open |
 |---|---|---|
-| **Windows 10 / 11** | [`EnglishInterviewGym-win64.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/latest/download/EnglishInterviewGym-win64.zip) | Unzip → double-click `EnglishInterviewGym.exe` → a standalone **app window** opens (no console window) |
-| **macOS (Apple Silicon)** | [`EnglishInterviewGym-macos.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/latest/download/EnglishInterviewGym-macos.zip) | Unzip → double-click 启动.command (if macOS blocks it the first time: right-click → Open) |
+| **Windows 10 / 11** | [`EnglishInterviewGym-v0.16.1-win64.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.1/EnglishInterviewGym-v0.16.1-win64.zip) | Unzip → double-click `EnglishInterviewGym.exe` → a standalone **app window** opens (no console window) |
+| **macOS (Apple Silicon)** | [`EnglishInterviewGym-v0.16.1-macos.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.1/EnglishInterviewGym-v0.16.1-macos.zip) | Unzip → double-click 启动.command (if macOS blocks it the first time: right-click → Open) |
 
-Both are green, portable builds: no Python, no terminal. Config and data live inside the folder — delete the folder for a clean uninstall.
+> 📦 Every zip **includes its version in the filename** (e.g. `…-v0.16.1-win64.zip`) so you can tell builds apart at a glance; all past versions live on the [Releases page](https://github.com/KumquatYZ/english-interview-gym/releases).
+
+Both are green, portable builds: no Python, no terminal. **Everything (program, API keys, practice data, logs, browser cache) lives inside the app folder** — delete the folder for a complete uninstall; nothing is written to your C: drive user directories.
 
 > macOS unzip tip: prefer the system extractor (just double-click the zip in Finder). Launch by **double-clicking 启动.command** (it strips the system quarantine flag automatically). If you see a **"'X' is damaged and can't be opened. You should move it to the Trash."** dialog: **click Cancel, NOT "Move to Trash"** — that is macOS blocking an unsigned app, and "Move to Trash" deletes app files (if that happens, just re-extract). From v0.15.11 on, the package is fully hardened and the dialog will not appear in normal use.
 
@@ -110,6 +112,17 @@ Open the app → top-right "**⚙️ 设置 (Settings)**" → fill in two groups
 3. Open any question → "🎙 从这题开练 / Practice this" → tap the mic (or press Space) and speak;
 4. Tap the mic again when done → review the transcript, feedback cards and score → next question;
 5. When finished, click "复盘 / Review" (top-right) for the full session report.
+
+### Updating & uninstalling (portable build)
+
+**Updating to a new version**:
+1. Download the new zip (filename includes the version number — grab the latest);
+2. Best practice: extract into a **new folder**; you may also extract over the old folder and relaunch — **from v0.16.1 on, missing question sets/personas are filled in automatically** (your existing files and customisations are never overwritten);
+3. To keep your practice history and API keys: copy `data/`, `.env` and `config.local.yaml` from the old folder into the new one (skip this for a fresh start).
+
+**Complete uninstall (Windows / macOS)**: this is a green portable build — program, API keys, practice data, logs and the browser cache **all live inside the app folder** (on Windows even the WebView cache is stored in `webview_data/` inside the folder). **Delete the folder = fully uninstalled**; nothing is written to your C: drive user directories (e.g. AppData). Back up `data/` first if you want to keep your records; delete any desktop shortcut you created.
+
+**Check your version**: in the app → "⚙️ Settings", the version is shown in the bottom corner (e.g. `版本 0.16.1`).
 
 ### Option B (optional): run from source (macOS / developers)
 

@@ -33,7 +33,7 @@ def _run(cmd):
 
 def to_wav(src: Path) -> Path:
     """浏览器录音（webm/mp4/…）→ 16k 单声道 wav。"""
-    dst = Path(tempfile.mkdtemp(prefix="et_asr_")) / "audio.wav"
+    dst = config.make_temp_dir("asr_") / "audio.wav"  # 临时文件放软件目录内（transcribe 结束后自动清理）
     ff = config.ffmpeg_path()
     if not (shutil.which(ff) or Path(ff).exists()):
         raise ASRError(f"ffmpeg 不可用: {ff}")
@@ -175,28 +175,31 @@ def transcribe(audio_path) -> dict:
 
     driver = config.get("asr.driver", "auto")
     wav = to_wav(Path(audio_path))
-    errors = []
-    if driver in ("auto", "cloud"):
-        models = [m for m in [config.get("asr.model")] + list(config.get("asr.fallback_models") or []) if m]
-        if not models:
-            errors.append("云识别未配置模型（asr.model）")
-        proto = _protocol()
-        for m in models:
-            try:
-                if proto == "openai":
-                    return transcribe_openai(wav, model=m)
-                return transcribe_cloud(wav, model=m)
-            except Exception as e:  # noqa: BLE001
-                errors.append(f"云识别失败/{m}: {e}")
-    if driver in ("auto", "local"):
-        if sys.platform != "darwin":
-            errors.append("本地识别不可用：mlx-whisper 仅支持 macOS")
-        else:
-            try:
-                return transcribe_local(wav)
-            except Exception as e:  # noqa: BLE001
-                errors.append(f"local: {e}")
-    msg = " | ".join(errors)
-    if driver in ("auto", "cloud") and not config.get("asr.endpoint", ""):
-        msg += "。请在「⚙️ 设置 → 语音服务」填入识别接口地址与模型"
-    raise ASRError(msg)
+    try:
+        errors = []
+        if driver in ("auto", "cloud"):
+            models = [m for m in [config.get("asr.model")] + list(config.get("asr.fallback_models") or []) if m]
+            if not models:
+                errors.append("云识别未配置模型（asr.model）")
+            proto = _protocol()
+            for m in models:
+                try:
+                    if proto == "openai":
+                        return transcribe_openai(wav, model=m)
+                    return transcribe_cloud(wav, model=m)
+                except Exception as e:  # noqa: BLE001
+                    errors.append(f"云识别失败/{m}: {e}")
+        if driver in ("auto", "local"):
+            if sys.platform != "darwin":
+                errors.append("本地识别不可用：mlx-whisper 仅支持 macOS")
+            else:
+                try:
+                    return transcribe_local(wav)
+                except Exception as e:  # noqa: BLE001
+                    errors.append(f"local: {e}")
+        msg = " | ".join(errors)
+        if driver in ("auto", "cloud") and not config.get("asr.endpoint", ""):
+            msg += "。请在「⚙️ 设置 → 语音服务」填入识别接口地址与模型"
+        raise ASRError(msg)
+    finally:
+        shutil.rmtree(wav.parent, ignore_errors=True)

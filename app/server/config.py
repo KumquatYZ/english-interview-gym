@@ -55,15 +55,44 @@ def web_dir() -> Path:
     return ROOT / "app" / "web"
 
 
+def _release_missing(src: Path, tgt: Path) -> int:
+    """把 src 中缺失的文件逐个补到 tgt（不覆盖已存在文件）；返回补入的文件数。"""
+    n = 0
+    for p in sorted(src.rglob("*")):
+        if p.is_dir():
+            continue
+        dst = tgt / p.relative_to(src)
+        if dst.exists():
+            continue
+        try:
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(p, dst)
+            n += 1
+        except Exception:
+            continue
+    return n
+
+
 def bootstrap():
-    """打包模式首启：把默认 materials/ 与 config.yaml 释放到 exe 旁（仅当缺失）。"""
+    """打包模式启动：把默认 materials/ 与 config.yaml 释放到 exe 旁。
+
+    - materials 目录整体缺失 → 全量释放；
+    - 目录已存在（升级时在新包上覆盖解压）→ 逐个补齐缺失文件（新增题库 / 角色会自动出现），
+      不覆盖用户已有文件（profile.md、自定义素材、旧题库均保留）；
+    - 根 config.yaml 缺失时释放默认（用户设置在 .env / config.local.yaml，不受影响）。
+    """
     if not _is_frozen():
         return
     try:
-        tgt = ROOT / "materials"
         src = BUNDLE / "materials_default"
-        if not tgt.exists() and src.exists():
-            shutil.copytree(src, tgt)
+        tgt = ROOT / "materials"
+        if src.exists():
+            if not tgt.exists():
+                shutil.copytree(src, tgt)
+            else:
+                added = _release_missing(src, tgt)
+                if added:
+                    print(f"[bootstrap] 已补齐 {added} 个新增素材文件到 materials/（升级自动同步）")
         cfg = _cfg_path()
         if not cfg.exists() and (BUNDLE / "app" / "config.yaml").exists():
             shutil.copy(BUNDLE / "app" / "config.yaml", cfg)
@@ -201,6 +230,18 @@ def data_dir() -> Path:
     d = ROOT / get("paths.data_dir", "data")
     d.mkdir(parents=True, exist_ok=True)
     return d
+
+
+def make_temp_dir(prefix: str = "tmp_") -> Path:
+    """在软件数据目录内创建临时工作目录（用完请自行 rmtree）。
+
+    保证所有中间文件都落在软件目录内，不向系统 C 盘临时目录写入。
+    """
+    import tempfile
+
+    base = data_dir() / "tmp"
+    base.mkdir(parents=True, exist_ok=True)
+    return Path(tempfile.mkdtemp(prefix=prefix, dir=str(base)))
 
 
 def materials_dir() -> Path:

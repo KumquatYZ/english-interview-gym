@@ -11,6 +11,7 @@ Key：使用「语音服务 Key」（SPEECH_API_KEY），未配置时复用对�
 import base64
 import hashlib
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -48,18 +49,21 @@ def _cache_path(text: str, tag: str) -> Path:
 def synth_say(text: str) -> bytes:
     voice = config.get("tts.say_voice", "Samantha")
     rate = int(config.get("tts.say_rate", 170))
-    tmp = Path(tempfile.mkdtemp(prefix="et_tts_"))
-    aiff, mp3 = tmp / "a.aiff", tmp / "a.mp3"
-    p = subprocess.run(["say", "-v", voice, "-r", str(rate), "-o", str(aiff), text], capture_output=True, text=True)
-    if p.returncode != 0 or not aiff.exists():
-        # 音色不存在时退回系统默认音色
-        subprocess.run(["say", "-r", str(rate), "-o", str(aiff), text], check=True, capture_output=True)
-    subprocess.run(
-        [config.ffmpeg_path(), "-y", "-i", str(aiff), "-codec:a", "libmp3lame", "-qscale:a", "4", str(mp3)],
-        check=True,
-        capture_output=True,
-    )
-    return mp3.read_bytes()
+    tmp = config.make_temp_dir("tts_")  # 临时文件放软件目录内，用完即清
+    try:
+        aiff, mp3 = tmp / "a.aiff", tmp / "a.mp3"
+        p = subprocess.run(["say", "-v", voice, "-r", str(rate), "-o", str(aiff), text], capture_output=True, text=True)
+        if p.returncode != 0 or not aiff.exists():
+            # 音色不存在时退回系统默认音色
+            subprocess.run(["say", "-r", str(rate), "-o", str(aiff), text], check=True, capture_output=True)
+        subprocess.run(
+            [config.ffmpeg_path(), "-y", "-i", str(aiff), "-codec:a", "libmp3lame", "-qscale:a", "4", str(mp3)],
+            check=True,
+            capture_output=True,
+        )
+        return mp3.read_bytes()
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
 
 
 def _protocol() -> str:

@@ -837,7 +837,7 @@ function renderFeedback(r) {
     body += `<div class="fb-err">⚠️ <b>本轮没有可显示的反馈内容</b>：模型返回了空的反馈对象（服务端已记录原始输出）。<br>
       请到「⚙️ 设置 → 💬 对话服务」点「🧪 测试对话服务」查看原始返回；不影响继续练习。</div>`;
   }
-  body += `<div class="metrics-line">用时 ${m.duration_s || 0}s · ${m.wpm || 0} wpm · 填充词 ${m.fillers || 0} · 长停顿 ${m.long_pauses || 0} · 转写引擎 ${esc({ cloud: "云端", local: "本地", tokenhub: "云端" }[r.asr_driver] || r.asr_driver || "")}</div>`;
+  body += `<div class="metrics-line">用时 ${m.duration_s || 0}s · ${m.wpm || 0} wpm · 填充词 ${m.fillers || 0} · 长停顿 ${m.long_pauses || 0} · 转写引擎 ${esc({ cloud: "云端", local: "本地" }[r.asr_driver] || r.asr_driver || "")}</div>`;
 
   const node = document.createElement("details");
   node.className = "fb-card";

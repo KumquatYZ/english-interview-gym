@@ -24,11 +24,15 @@ WEB = config.web_dir()
 
 @asynccontextmanager
 async def _lifespan(_app):
+    try:
+        shutil.rmtree(config.data_dir() / "tmp", ignore_errors=True)  # 清理上次异常退出的中间文件
+    except Exception:  # noqa: BLE001
+        pass
     mobile.autostart()  # 上次启用了手机访问则自动恢复（失败静默）
     yield
 
 
-app = FastAPI(title="EngTraining", version="0.16.0", lifespan=_lifespan)
+app = FastAPI(title="EngTraining", version="0.16.1", lifespan=_lifespan)
 
 
 @app.get("/api/health")

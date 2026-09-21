@@ -29,14 +29,16 @@ jobs:
       - name: Assemble package
         shell: pwsh
         run: |
+          $ver = "${{ github.ref_type == 'tag' && github.ref_name || 'dev' }}"
           Copy-Item packaging/README-Windows.txt dist/EnglishInterviewGym/
           Copy-Item packaging/FFMPEG-NOTICE.txt dist/EnglishInterviewGym/
-          Compress-Archive -Path dist/EnglishInterviewGym -DestinationPath EnglishInterviewGym-win64.zip
+          Compress-Archive -Path dist/EnglishInterviewGym -DestinationPath "EnglishInterviewGym-$ver-win64.zip"
+          Get-ChildItem *.zip | Select-Object Name, Length
 
       - uses: actions/upload-artifact@v4
         with:
           name: EnglishInterviewGym-win64
-          path: EnglishInterviewGym-win64.zip
+          path: EnglishInterviewGym-*-win64.zip
           retention-days: 30
 
   build-macos:
@@ -71,15 +73,17 @@ jobs:
 
       - name: Assemble package (preserve exec bits via ditto)
         run: |
+          VER="${{ github.ref_type == 'tag' && github.ref_name || 'dev' }}"
           cp packaging/README-macOS.txt packaging/FFMPEG-NOTICE.txt dist/EnglishInterviewGym/
           cp packaging/启动.command dist/EnglishInterviewGym/
           chmod +x dist/EnglishInterviewGym/启动.command dist/EnglishInterviewGym/EnglishInterviewGym
-          ditto -c -k --sequesterRsrc --keepParent dist/EnglishInterviewGym EnglishInterviewGym-macos.zip
+          ditto -c -k --sequesterRsrc --keepParent dist/EnglishInterviewGym "EnglishInterviewGym-${VER}-macos.zip"
+          ls -la *.zip
 
       - uses: actions/upload-artifact@v4
         with:
           name: EnglishInterviewGym-macos
-          path: EnglishInterviewGym-macos.zip
+          path: EnglishInterviewGym-*-macos.zip
           retention-days: 30
 
   release:

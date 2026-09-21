@@ -75,20 +75,22 @@
 
 ## 快速开始
 
-> 📖 **界面使用手册**（17 页，含全部界面截图，边看边练）：[DOCX 下载](docs/USER-GUIDE.docx) · [PDF 下载](docs/USER-GUIDE.pdf)
+> 📖 **界面使用手册**（21 页，含全部界面截图，边看边练）：[DOCX 下载](docs/USER-GUIDE.docx) · [PDF 下载](docs/USER-GUIDE.pdf)
 
 两条路，选一条就行：**方式一（推荐，零安装）** 下载免安装包，双击就能用；**方式二** 从源码运行（macOS / 想自己改代码的人）。
 
 ### 方式一（推荐，零安装）：免安装包
 
-**第 1 步 · 下载** —— 到 [**Releases（latest）**](https://github.com/KumquatYZ/english-interview-gym/releases/latest) 下载对应平台的包：
+**第 1 步 · 下载** —— 到 [**Releases 页面**](https://github.com/KumquatYZ/english-interview-gym/releases) 下载对应平台**最新版**的包（压缩包文件名带版本号，认准最新）：
 
 | 平台 | 文件 | 怎么打开 |
 |---|---|---|
-| **Windows 10 / 11** | [`EnglishInterviewGym-win64.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/latest/download/EnglishInterviewGym-win64.zip) | 解压 → 双击 `EnglishInterviewGym.exe` → 打开「英语面试健身房」**独立应用窗口**（无命令行黑框） |
-| **macOS（Apple 芯片）** | [`EnglishInterviewGym-macos.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/latest/download/EnglishInterviewGym-macos.zip) | 解压 → 双击「启动.command」（首次被系统拦截：右键 →「打开」） |
+| **Windows 10 / 11** | [`EnglishInterviewGym-v0.16.1-win64.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.1/EnglishInterviewGym-v0.16.1-win64.zip) | 解压 → 双击 `EnglishInterviewGym.exe` → 打开「英语面试健身房」**独立应用窗口**（无命令行黑框） |
+| **macOS（Apple 芯片）** | [`EnglishInterviewGym-v0.16.1-macos.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.1/EnglishInterviewGym-v0.16.1-macos.zip) | 解压 → 双击「启动.command」（首次被系统拦截：右键 →「打开」） |
 
-都是一次性绿色便携版：不装 Python、不碰命令行；配置和数据都存在文件夹里，删掉文件夹 = 卸载干净。
+> 📦 每个压缩包的**文件名都带版本号**（如 `…-v0.16.1-win64.zip`），一眼就能辨别新旧；全部历史版本都在 [Releases 页](https://github.com/KumquatYZ/english-interview-gym/releases)。
+
+都是一次性绿色便携版：不装 Python、不碰命令行；**所有内容（程序、API Key、练习记录、日志、缓存）都存在程序文件夹内**——删掉文件夹 = 完全卸载，不会向 C 盘用户目录写入任何数据。
 
 > macOS 解压提示：推荐用系统自带方式解压（访达里直接双击 zip）。启动请**双击「启动.command」**（会自动去除系统隔离标记）。如果弹出 **“已损坏，应移到废纸篓”** 一类对话框：**请点【取消】，不要点“移到废纸篓”**——那是 macOS 对未签名应用的拦截提示，点“移到废纸篓”会删掉程序文件（删了也没关系，重新解压即可）。v0.15.11 起安装包已做全面兼容，正常使用不会再遇到该弹窗。
 
@@ -110,6 +112,17 @@
 3. 点任意题卡 → 「🎙 从这题开练」→ 点麦克风（或按空格）开口；
 4. 说完再点一次麦克风 → 看转写、反馈卡与评分 → 继续下一题；
 5. 练完点右上角「复盘」生成整场报告。
+
+### 更新与卸载（免安装包）
+
+**更新到新版本**：
+1. 下载新压缩包（文件名带版本号，认准最新）；
+2. 推荐解压到**新文件夹**使用；也可直接覆盖旧文件夹后再启动——**v0.16.1 起会自动补齐新增题库 / 角色**（不覆盖你已有的文件和自定义）；
+3. 想保留练习记录与 API Key：把旧文件夹里的 `data/`、`.env`、`config.local.yaml` 复制进新文件夹即可（不复制 = 全新开始）。
+
+**彻底卸载（Windows / macOS 通用）**：绿色免安装版——程序、API Key、练习数据、日志、浏览器缓存**全部都在程序文件夹内**（Windows 版连 WebView 缓存也写在文件夹里的 `webview_data/`）。**删除该文件夹 = 完全卸载**，不会向 C 盘用户目录（如 AppData）写入任何数据。删除前想保留记录可先备份 `data/`；创建过桌面快捷方式的话一并删除即可。
+
+**确认当前版本**：界面 → 「⚙️ 设置」右下角显示版本号（如 `版本 0.16.1`）。
 
 ### 方式二（可选）：从源码运行（macOS / 开发者）
 

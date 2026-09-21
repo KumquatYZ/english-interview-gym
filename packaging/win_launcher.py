@@ -132,7 +132,14 @@ def _open_native_window(url: str) -> bool:
             text_select=True,
         )
         w.events.closed += _request_quit
-        webview.start(debug=False)
+        # WebView2 用户数据（缓存 / Cookies）固定放在软件目录内：
+        # 保证「删除程序文件夹 = 完全清除环境」，不向 C 盘用户目录写入任何数据。
+        try:
+            storage = _app_root() / "webview_data"
+            storage.mkdir(parents=True, exist_ok=True)
+            webview.start(debug=False, storage_path=str(storage))
+        except TypeError:
+            webview.start(debug=False)  # 旧版 pywebview 不支持 storage_path 时兜底
         return True
     except Exception as e:  # noqa: BLE001
         print(f"[launcher] 原生窗口启动失败：{e!r}")
