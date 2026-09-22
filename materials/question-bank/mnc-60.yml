@@ -14,7 +14,7 @@ questions:
     category: 开场与自我介绍
     text: "Tell me about yourself."
     intent: 破冰并定基调；面试官用 90 秒判断要不要往下聊。
-    hint: 一句话讲清「你是谁、解决什么问题」，再挑两个最强项目各给一个结果数字，最后收一句「为什么是这家公司」。100–150 词，像聊天，不像念简历；重点让面试官记住结果，而不是履历顺序。
+    hint: 像聊天一样介绍自己，不要念简历——① 一句身份（专业方向 + 阶段）；② 用一两句人话讲清你研究的是什么问题、为什么重要：先说「用 X 和 Y 解决什么问题」，不要上来就报模型名、数据集名；③ 说你平时用什么工具和方法解决专业问题（具体工具是加分项）；④ 挑一个亮点用能被听懂的话说，数字最多留一个；⑤ 收一句「为什么是这家公司」。100–150 词，通俗优先，宁少术语、不堆术语。
     followups:
       - "What's the one thing you want me to remember about you?"
       - "Why should we remember you among this year's PhD candidates?"
@@ -23,7 +23,7 @@ questions:
     category: 开场与自我介绍
     text: "Walk me through your resume, and highlight what's most relevant to this role."
     intent: 考察你能否为岗位做优先级判断，而不是流水账。
-    hint: 先想清楚岗位最需要什么，从简历里挑 2–3 个对得上的点讲深，每个点落到「做了什么 + 结果数字」，其余一句带过。面试官在看你会不会为岗位做优先级判断，而不是听流水账。
+    hint: 先想清楚岗位最需要什么，从简历里挑 2–3 个最对得上的点讲——每个点说清「我做了什么、怎么做的、结果如何」，结果能说人话就别报数字（最多一处）；其余一句带过。面试官在看你会不会为岗位做优先级判断、讲得清不清楚，而不是听流水账或术语轰炸。
     followups:
       - "Which of these projects are you most proud of, and why?"
   - id: a03

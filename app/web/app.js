@@ -584,7 +584,7 @@ async function toggleSuggestion(qNode, st) {
   const slot = qNode.querySelector(".sugg-slot");
   if (slot.dataset.open === "1") { slot.innerHTML = ""; slot.dataset.open = "0"; return; }
   slot.dataset.open = "1";
-  slot.innerHTML = `<div class="sugg-card"><div class="head"><b>📖 示范答案</b><span class="hint-inline">短答 · 结论 + 证据 + 收尾</span></div><div class="loading"><span class="loader-sm"></span>生成中…（首次约 4-10 秒）</div></div>`;
+  slot.innerHTML = `<div class="sugg-card"><div class="head"><b>📖 示范答案</b><span class="hint-inline">短答 · 通俗易懂 · 可直接说出口</span></div><div class="loading"><span class="loader-sm"></span>生成中…（首次约 4-10 秒）</div></div>`;
   try {
     const sug = await fetchSuggestion(st, false);
     renderSugg(slot, sug, st);
