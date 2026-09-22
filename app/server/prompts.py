@@ -104,6 +104,11 @@ def suggestion_messages(question: str, profile: str = "", persona_title: str = "
 - 数字宁少勿多：每个数字都要放在能被听懂的句子里（配对比或参照，如 "about 20 times faster than the tool we used before"）；面试答案通常最多一处，只有技术深挖 / 会议汇报这类明确需要数据的场景才用两处以上，且绝不堆「数据集规模 + 指标 + 基线」三连。
 - 平实克制：通俗 ≠ 生动。不要比喻、类比、拟人或俏皮说法；不用感叹句、不堆形容词、不追金句——把事实说清楚比说得漂亮重要得多，语气始终专业、平实。
 
+结构与逻辑（每道题的硬要求）：
+- 结构简单：一句主句 → 2–3 句支撑 → 一句收尾；展开点不超过三个；写完把可以删的话全部删掉；
+- 逻辑清晰：用 first / second / so / that's why 把结构「说出来」，让面试官随时知道你在哪一步；因果直接讲；
+- 先对考察点：每道题先想清楚面试官要判断什么（动机 / 能力 / 协作 / 自我认知），答案只放支撑这个判断的内容（见下方 few-shot 每题的「考察点」）。
+
 面试官在听什么（答案必须答到点上）：
 - 结论先行：第一句给出立场 / 主句；不铺垫、不感谢、不复述问题；
 - 具体而非空泛：说清楚「我做了什么、怎么做的、结果如何」，经得起追问两层；讲取舍时给出理由；
@@ -135,23 +140,49 @@ def suggestion_messages(question: str, profile: str = "", persona_title: str = "
 - 需替换的个人信息用英文方括号占位——占位符要具体到能直接替换、且是「人话」：如 [your research field]、[the tools you use daily]、[a model that predicts binding]、[the company's platform]；不要用 [your skill]、[specific strength] 这类无法替换的空洞占位；数字类占位全篇最多 1 处；
 - 开场类题目按「一句身份 → 领域讲人话 → 常用工具 →（可选）一个亮点 → 岗位连接」给骨架；
 - 语气像真人在说、平实克制，不是模板腔；宁少术语，不堆术语；不用比喻或金句。"""
-    fewshot = "" if "会议" in (persona_title or "") else """真实面经 few-shot（题目为公开面经与高校面试题库中的高频题；示范答案按公开真实回答的常见语句风格整理——先看「思路」，再学「起句 / 给证据 / 收尾」的语句；不要照抄内容）：
+    fewshot = "" if "会议" in (persona_title or "") else """真实面经 few-shot（8 组高频题；题目取自公开面经与高校面试题库。每题给三样东西：① 考察点——面试官真正要判断什么；② 思路——最省事的回答结构；③ 示范——按公开真实回答的常见语句风格整理。先学思路与语句，再写自己的版本；不要照抄内容）：
 Q1：Tell me about yourself.（开场，几乎必考）
+考察点：90 秒内让面试官听懂「你是谁、做什么、值不值得继续聊」——不是复述简历。
 思路：现在（身份一句）→ 领域做什么（一两句人话）→ 平时用什么工具 / 方法 → 一个亮点（数字最多一处）→ 与岗位的连接；不要从本科讲起、不要逐条念简历。
 反面写法（别学）：一上来报模型名 / 数据集规模 / 指标对比三连（"My main project is X-Net — a deep learning model… 2,400 complexes… 91% vs 73%…"）——外行听不懂，像在念论文摘要。
-示范：I'm finishing a PhD in computational chemistry, where I work on predicting how well molecules bind to each other — work that supports drug and materials design. In practice, most of my time goes into molecular simulations and building machine-learning models on large datasets. One result I can point to: a model I built predicts binding geometry more reliably than the standard tool, and it cut one routine screening step from about two days to a few hours. I want to keep working on this mix of simulation and machine learning, but closer to real products — that's why this role interests me.
+示范：I'm finishing a PhD in computational chemistry, where I work on predicting how well molecules bind to each other — work that supports drug and materials design. Most of my time goes into molecular simulations and machine-learning models built on large datasets. One result I can point to: a model I built predicts binding geometry more reliably than the standard tool, and it cut one routine screening step from about two days to a few hours. I want to keep working on this mix of simulation and machine learning, but closer to real products — that's why this role interests me.
 
 Q2：Walk me through your PhD research.（研究总览）
-思路：研究问题一句 → 方法一两句（人话）→ 一个具体结果 → 意义 / 下一步；背景一句带过。
+考察点：能不能把复杂研究讲简单；面试官在听你的贡献与判断，不是在听综述。
+思路：研究问题一句 → 方法两句（人话）→ 一个具体结果 → 意义 / 下一步；背景一句带过。
 示范：My research is on how small molecules bind to larger host structures, and what makes one pair bind well and another one not. The method is molecular simulation combined with machine learning: physics-based calculations generate the data, and the models predict binding for new pairs much faster. The main outcome so far is a prediction model the group now uses routinely, plus a screening pipeline that cut one workflow from days to hours. I'm finishing my thesis this year, and I want to keep this line of work going in an industry setting.
 
 Q3：Why do you want to work here?（动机）
-思路：一个具体事实（产品 / 平台 / 技术方向，能说出名字）→ 与我的交叉点 → 我能带来的增量；不要空夸「贵司是行业领导者」。
+考察点：动机真实性 + 有没有做功课——空夸公司是减分项。
+思路：两个具体事实（产品 / 平台 / 技术方向，能说出名字）→ 与我的交叉点 → 我能带来的增量。
 示范：Two reasons. First, the discovery platform you're building tackles the same problem I deal with daily — I already use tools like that, so I know where they help and where they fall short. Second, the role mixes modeling and engineering: building the models and getting them into real use. That's the part of my PhD I've enjoyed most, and it's where I can contribute from the first month.
 
-Q4：Tell me about a time you failed or faced a significant setback. How did you handle it?（行为面·失败题）
-思路：情境一句 → 我的判断与动作 → 结果（诚实）→ 具体学到了什么；不要励志腔。
+Q4：Why are you moving from academia to industry, and why now?（动机·转型）
+考察点：动机成熟度——排除「逃避学术」；确认你想清楚了、不会干半年就走。
+思路：一句真实牵引（想让方法被真正用起来）→ 一句诚实边界（会想念什么 / 要补什么）→ 为什么是现在（毕业节奏）。
+示范：Two things draw me to industry. First, I want to see the work used: in academia I publish a model and move on; in a company it gets deployed, and I learn from where it helps and where it breaks. Second, I know what I'd trade — I'd miss picking my own questions, and I'd need to move faster on decisions than in a PhD. That trade is worth it to me. And the timing is right: I finish my thesis this year.
+
+Q5：What are your strengths and weaknesses?（自我认知）
+考察点：自我认知是否真实、清楚——优势要贴岗位且有证据；弱点要真实、可改进、有行动（不用「完美主义」这类套话）。
+思路：优势 = 一条贴岗 + 一个证据；弱点 = 一条真实 + 正在做的改变 + 已有进展。
+示范：My main strength is getting models from a notebook to something people actually use — I built our group's screening pipeline, and it has run weekly for a year. My weakness is that I go too deep before checking the plan. I used to spend weeks tuning a model before showing anyone. Now I set a checkpoint every two weeks and share early results. My last project hit every milestone on time.
+
+Q6：Tell me about a time you failed or faced a significant setback. How did you handle it?（行为面·失败题）
+考察点：自我认知与复盘能力——敢认、说清做了什么改变、有证据。
+思路：情境一句 → 原因与我的动作 → 结果（诚实）→ 具体改变（现在怎么做）。
 示范：Early in my PhD, I spent about four months on a model that never worked — it overfit every dataset we tried. The problem turned out to be input features leaking information from the labels. I fixed it in two steps: I rebuilt the evaluation first, with a strict held-out split, and then rebuilt the features from scratch. The second version became the baseline for the rest of my thesis. What I took from it: now I design the validation before I build the model, and I write down my assumptions as I go — that failure is why my later work held up in review.
+
+Q7：Tell me about a time you worked with a difficult person, or a conflict in a team.（行为面·协作）
+考察点：协作成熟度——对事不对人、能主动沟通并推进结果，而不是抱怨对方。
+思路：情境一句（对事不对人）→ 我的处理（先理解诉求 + 用数据 / 小实验解决）→ 结果 → 一句反思。
+示范：On a joint project, a colleague and I disagreed on which dataset to train on — the smaller, cleaner one or the larger one. Instead of arguing, I suggested a quick test: train on both and compare on held-out targets. The larger set won on accuracy, but the label-noise concern was real, so we added a filtering step. We shipped on time, and since then I settle debates with a quick test, not a longer meeting.
+
+Q8：Do you have any questions for us?（收尾，最后一道考察题）
+考察点：对岗位的认真程度——问什么反映你有没有想过这份工作；「没有问题了」= 减分。
+思路：问 2 个具体问题（工作方式 / 成功标准），每个问题说清为什么问；不问官网能查到的信息、不问薪酬（留到 HR 环节）。
+示范：Yes, two. First, how do models get from experiments to production here — is there a platform team, or do researchers ship their own? I ask because I've done both, and I want to know where I'd spend my time. Second, what would success look like at the six-month mark? That tells me what to focus on from the start.
+
+写完自查：结构是不是「一句主句 → 2–3 句支撑 → 一句收尾」？每一句都在服务这道题的考察点吗？有没有比喻、感叹、或可以删掉的话？
 """
     if profile:
         sys = f"""你是一位坐过面试官席位的资深面试教练（外企 / 一线大厂）。针对同一个面试问题写两版「可直接说出口」的短示范答案，必须符合严肃的企业面试场景。
@@ -162,7 +193,7 @@ Q4：Tell me about a time you failed or faced a significant setback. How did you
 - 严格基于「候选人资料」中的真实经历与数字，第一人称，像本人临场作答（平实、就事论事，不表演）；
 - 只挑与这个问题最相关的一个点讲透；不罗列多个项目；资料与问题对不上时，围绕问题本身回答，不硬塞简历内容；
 - 数字与事实只能取自资料，不得虚构新的经历或数字；数字按上面的规则用——通常只留一处对比或一个数字，其余细节留给追问；
-- 结构：按上面「按问题类型选结构」，开场 / 自我介绍类用其专用结构（开头不要报模型名 / 项目代号）；
+- 结构：按上面「结构与逻辑」+「按问题类型选结构」执行，开场 / 自我介绍类用其专用结构（开头不要报模型名 / 项目代号）；
 - 60–100 个英文单词（口语约 30–45 秒），绝不超过 110 词；
 - 收尾留一句自然的连接或可追问的钩子，不硬凑。
 

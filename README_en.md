@@ -85,10 +85,10 @@ Two paths — pick one: **Option A (recommended, zero install)**: download the p
 
 | Platform | File | How to open |
 |---|---|---|
-| **Windows 10 / 11** | [`EnglishInterviewGym-v0.16.3-win64.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.3/EnglishInterviewGym-v0.16.3-win64.zip) | Unzip → double-click `EnglishInterviewGym.exe` → a standalone **app window** opens (no console window) |
-| **macOS (Apple Silicon)** | [`EnglishInterviewGym-v0.16.3-macos.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.3/EnglishInterviewGym-v0.16.3-macos.zip) | Unzip → double-click 启动.command (if macOS blocks it the first time: right-click → Open) |
+| **Windows 10 / 11** | [`EnglishInterviewGym-v0.16.4-win64.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.4/EnglishInterviewGym-v0.16.4-win64.zip) | Unzip → double-click `EnglishInterviewGym.exe` → a standalone **app window** opens (no console window) |
+| **macOS (Apple Silicon)** | [`EnglishInterviewGym-v0.16.4-macos.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.4/EnglishInterviewGym-v0.16.4-macos.zip) | Unzip → double-click 启动.command (if macOS blocks it the first time: right-click → Open) |
 
-> 📦 Every zip **includes its version in the filename** (e.g. `…-v0.16.3-win64.zip`) so you can tell builds apart at a glance; all past versions live on the [Releases page](https://github.com/KumquatYZ/english-interview-gym/releases).
+> 📦 Every zip **includes its version in the filename** (e.g. `…-v0.16.4-win64.zip`) so you can tell builds apart at a glance; all past versions live on the [Releases page](https://github.com/KumquatYZ/english-interview-gym/releases).
 
 Both are green, portable builds: no Python, no terminal. **Everything (program, API keys, practice data, logs, browser cache) lives inside the app folder** — delete the folder for a complete uninstall; nothing is written to your C: drive user directories.
 
@@ -122,7 +122,7 @@ Open the app → top-right "**⚙️ 设置 (Settings)**" → fill in two groups
 
 **Complete uninstall (Windows / macOS)**: this is a green portable build — program, API keys, practice data, logs and the browser cache **all live inside the app folder** (on Windows even the WebView cache is stored in `webview_data/` inside the folder). **Delete the folder = fully uninstalled**; nothing is written to your C: drive user directories (e.g. AppData). Back up `data/` first if you want to keep your records; delete any desktop shortcut you created.
 
-**Check your version**: in the app → "⚙️ Settings", the version is shown in the bottom corner (e.g. `版本 0.16.3`).
+**Check your version**: in the app → "⚙️ Settings", the version is shown in the bottom corner (e.g. `版本 0.16.4`).
 
 ### Option B (optional): run from source (macOS / developers)
 

@@ -85,10 +85,10 @@
 
 | 平台 | 文件 | 怎么打开 |
 |---|---|---|
-| **Windows 10 / 11** | [`EnglishInterviewGym-v0.16.3-win64.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.3/EnglishInterviewGym-v0.16.3-win64.zip) | 解压 → 双击 `EnglishInterviewGym.exe` → 打开「英语面试健身房」**独立应用窗口**（无命令行黑框） |
-| **macOS（Apple 芯片）** | [`EnglishInterviewGym-v0.16.3-macos.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.3/EnglishInterviewGym-v0.16.3-macos.zip) | 解压 → 双击「启动.command」（首次被系统拦截：右键 →「打开」） |
+| **Windows 10 / 11** | [`EnglishInterviewGym-v0.16.4-win64.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.4/EnglishInterviewGym-v0.16.4-win64.zip) | 解压 → 双击 `EnglishInterviewGym.exe` → 打开「英语面试健身房」**独立应用窗口**（无命令行黑框） |
+| **macOS（Apple 芯片）** | [`EnglishInterviewGym-v0.16.4-macos.zip`](https://github.com/KumquatYZ/english-interview-gym/releases/download/v0.16.4/EnglishInterviewGym-v0.16.4-macos.zip) | 解压 → 双击「启动.command」（首次被系统拦截：右键 →「打开」） |
 
-> 📦 每个压缩包的**文件名都带版本号**（如 `…-v0.16.3-win64.zip`），一眼就能辨别新旧；全部历史版本都在 [Releases 页](https://github.com/KumquatYZ/english-interview-gym/releases)。
+> 📦 每个压缩包的**文件名都带版本号**（如 `…-v0.16.4-win64.zip`），一眼就能辨别新旧；全部历史版本都在 [Releases 页](https://github.com/KumquatYZ/english-interview-gym/releases)。
 
 都是一次性绿色便携版：不装 Python、不碰命令行；**所有内容（程序、API Key、练习记录、日志、缓存）都存在程序文件夹内**——删掉文件夹 = 完全卸载，不会向 C 盘用户目录写入任何数据。
 
@@ -122,7 +122,7 @@
 
 **彻底卸载（Windows / macOS 通用）**：绿色免安装版——程序、API Key、练习数据、日志、浏览器缓存**全部都在程序文件夹内**（Windows 版连 WebView 缓存也写在文件夹里的 `webview_data/`）。**删除该文件夹 = 完全卸载**，不会向 C 盘用户目录（如 AppData）写入任何数据。删除前想保留记录可先备份 `data/`；创建过桌面快捷方式的话一并删除即可。
 
-**确认当前版本**：界面 → 「⚙️ 设置」右下角显示版本号（如 `版本 0.16.3`）。
+**确认当前版本**：界面 → 「⚙️ 设置」右下角显示版本号（如 `版本 0.16.4`）。
 
 ### 方式二（可选）：从源码运行（macOS / 开发者）
 

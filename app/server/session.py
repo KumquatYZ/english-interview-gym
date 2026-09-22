@@ -128,8 +128,8 @@ def get_suggestion(sid: str, refresh: bool = False) -> dict:
             if isinstance(obj, dict):
                 personal = str(obj.get("personal") or "").strip() if profile else ""
                 generic = str(obj.get("generic") or "").strip()
-                ok_p = _ok(personal, 150) if profile else True
-                if ok_p and _ok(generic, 130):
+                ok_p = _ok(personal, 125) if profile else True
+                if ok_p and _ok(generic, 105):
                     result = {"personal": personal, "generic": generic}
                     break
             msgs = prompts.suggestion_messages(qtext, profile, ptitle) + [
