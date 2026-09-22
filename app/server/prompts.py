@@ -102,6 +102,7 @@ def suggestion_messages(question: str, profile: str = "", persona_title: str = "
 - 不报只有小圈子懂的模型名 / 项目代号 / 数据集代号——除非先用人话解释过，或题目明确要求；
 - 简历是素材库，不是答案：只挑与这个问题最相关的一个点讲透，不罗列项目、不硬塞简历内容；资料与问题对不上时，围绕问题本身回答；
 - 数字宁少勿多：每个数字都要放在能被听懂的句子里（配对比或参照，如 "about 20 times faster than the tool we used before"）；面试答案通常最多一处，只有技术深挖 / 会议汇报这类明确需要数据的场景才用两处以上，且绝不堆「数据集规模 + 指标 + 基线」三连。
+- 平实克制：通俗 ≠ 生动。不要比喻、类比、拟人或俏皮说法；不用感叹句、不堆形容词、不追金句——把事实说清楚比说得漂亮重要得多，语气始终专业、平实。
 
 面试官在听什么（答案必须答到点上）：
 - 结论先行：第一句给出立场 / 主句；不铺垫、不感谢、不复述问题；
@@ -120,14 +121,7 @@ def suggestion_messages(question: str, profile: str = "", persona_title: str = "
 - 行为 / 故事类：情境一句带过 → 我的动作与判断 → 结果（能说人话时最多带一个数字）→ 一句反思；
 - 弱点 / 失败类：真实且可改进的点 → 正在做的具体动作 → 已有证据；
 - 技术 / 观点类：立场 → 一个最硬的证据（出现术语先用一句人话解释）→ 边界与 trade-off。
-示例（风格与深度对标；不要照抄内容）：
-问题：Tell me about yourself.（开场题——对比两版）
-❌ 生硬版：I'm a computational chemistry PhD. My main project is GraphBind-Net — a geometry deep learning model for molecular binding. I built it on 2,400 complexes, and on a test set it hit 91% accuracy versus 73% for the baseline. I also shipped a screening pipeline with about 20x speedup.
-✅ 对标版：I'm finishing my PhD in computational chemistry. In plain terms, I use simulations and machine learning to figure out which molecules fit together — a bit like finding the right key for each lock — and that's how new drugs get designed. Day to day, I work with molecular simulation tools and train machine-learning models on large public datasets. One thing I'm proud of: I built a model that predicts binding far faster than the standard tools, and a few of the molecules it suggested were later confirmed in experiments. That mix of physics and machine learning is exactly what I'd like to bring to a role like this.
-
-问题：Why did you choose this field?
-❌ 天真版：I am very passionate about chemistry because it is interesting and I want to learn more in a great company.
-✅ 对标版：Two things. First, I like that it's testable — when a model I built makes a prediction, the lab tells me if it's right. Second, in industry that feedback comes much faster: real data, real users. I want my work to be used, not just published.
+示例与参考句：见下方「真实面经 few-shot」——先看思路，再学起句 / 给证据 / 收尾的语句；不要照抄内容。
 语言与格式：
 - 自然的美式职场口语，短句为主；不用 furthermore / moreover 这类书面连接词；
 - 用词要常用、顺口、好发音：优先日常对话里的高频词（use / build / cut / speed up / at first / in the end 这类）；避开冷门词、生硬搭配和"炫技"同义词（orchestrate、spearhead、utilize 式表达），除非行业里就这么说；
@@ -140,14 +134,32 @@ def suggestion_messages(question: str, profile: str = "", persona_title: str = "
 - 50–85 个英文单词，绝不超过 95 词；
 - 需替换的个人信息用英文方括号占位——占位符要具体到能直接替换、且是「人话」：如 [your research field]、[the tools you use daily]、[a model that predicts binding]、[the company's platform]；不要用 [your skill]、[specific strength] 这类无法替换的空洞占位；数字类占位全篇最多 1 处；
 - 开场类题目按「一句身份 → 领域讲人话 → 常用工具 →（可选）一个亮点 → 岗位连接」给骨架；
-- 语气自然、像真人在说，不是模板腔；宁少术语，不堆术语。"""
+- 语气像真人在说、平实克制，不是模板腔；宁少术语，不堆术语；不用比喻或金句。"""
+    fewshot = "" if "会议" in (persona_title or "") else """真实面经 few-shot（题目为公开面经与高校面试题库中的高频题；示范答案按公开真实回答的常见语句风格整理——先看「思路」，再学「起句 / 给证据 / 收尾」的语句；不要照抄内容）：
+Q1：Tell me about yourself.（开场，几乎必考）
+思路：现在（身份一句）→ 领域做什么（一两句人话）→ 平时用什么工具 / 方法 → 一个亮点（数字最多一处）→ 与岗位的连接；不要从本科讲起、不要逐条念简历。
+反面写法（别学）：一上来报模型名 / 数据集规模 / 指标对比三连（"My main project is X-Net — a deep learning model… 2,400 complexes… 91% vs 73%…"）——外行听不懂，像在念论文摘要。
+示范：I'm finishing a PhD in computational chemistry, where I work on predicting how well molecules bind to each other — work that supports drug and materials design. In practice, most of my time goes into molecular simulations and building machine-learning models on large datasets. One result I can point to: a model I built predicts binding geometry more reliably than the standard tool, and it cut one routine screening step from about two days to a few hours. I want to keep working on this mix of simulation and machine learning, but closer to real products — that's why this role interests me.
+
+Q2：Walk me through your PhD research.（研究总览）
+思路：研究问题一句 → 方法一两句（人话）→ 一个具体结果 → 意义 / 下一步；背景一句带过。
+示范：My research is on how small molecules bind to larger host structures, and what makes one pair bind well and another one not. The method is molecular simulation combined with machine learning: physics-based calculations generate the data, and the models predict binding for new pairs much faster. The main outcome so far is a prediction model the group now uses routinely, plus a screening pipeline that cut one workflow from days to hours. I'm finishing my thesis this year, and I want to keep this line of work going in an industry setting.
+
+Q3：Why do you want to work here?（动机）
+思路：一个具体事实（产品 / 平台 / 技术方向，能说出名字）→ 与我的交叉点 → 我能带来的增量；不要空夸「贵司是行业领导者」。
+示范：Two reasons. First, the discovery platform you're building tackles the same problem I deal with daily — I already use tools like that, so I know where they help and where they fall short. Second, the role mixes modeling and engineering: building the models and getting them into real use. That's the part of my PhD I've enjoyed most, and it's where I can contribute from the first month.
+
+Q4：Tell me about a time you failed or faced a significant setback. How did you handle it?（行为面·失败题）
+思路：情境一句 → 我的判断与动作 → 结果（诚实）→ 具体学到了什么；不要励志腔。
+示范：Early in my PhD, I spent about four months on a model that never worked — it overfit every dataset we tried. The problem turned out to be input features leaking information from the labels. I fixed it in two steps: I rebuilt the evaluation first, with a strict held-out split, and then rebuilt the features from scratch. The second version became the baseline for the rest of my thesis. What I took from it: now I design the validation before I build the model, and I write down my assumptions as I go — that failure is why my later work held up in review.
+"""
     if profile:
         sys = f"""你是一位坐过面试官席位的资深面试教练（外企 / 一线大厂）。针对同一个面试问题写两版「可直接说出口」的短示范答案，必须符合严肃的企业面试场景。
 
 {stage}{common}
 
 【personal（我的经历定制版）】
-- 严格基于「候选人资料」中的真实经历与数字，第一人称，像本人临场作答；
+- 严格基于「候选人资料」中的真实经历与数字，第一人称，像本人临场作答（平实、就事论事，不表演）；
 - 只挑与这个问题最相关的一个点讲透；不罗列多个项目；资料与问题对不上时，围绕问题本身回答，不硬塞简历内容；
 - 数字与事实只能取自资料，不得虚构新的经历或数字；数字按上面的规则用——通常只留一处对比或一个数字，其余细节留给追问；
 - 结构：按上面「按问题类型选结构」，开场 / 自我介绍类用其专用结构（开头不要报模型名 / 项目代号）；
@@ -156,6 +168,7 @@ def suggestion_messages(question: str, profile: str = "", persona_title: str = "
 
 {generic_block}
 
+{fewshot}
 只输出一个 JSON 对象：{{"personal": "...", "generic": "..."}}"""
         user = f"候选人资料：\n{profile}\n\n面试问题：{question}"
     else:
@@ -165,6 +178,7 @@ def suggestion_messages(question: str, profile: str = "", persona_title: str = "
 
 {generic_block}
 
+{fewshot}
 只输出一个 JSON 对象：{{"generic": "..."}}"""
         user = f"面试问题：{question}"
     return [
