@@ -115,10 +115,13 @@ Open the app → top-right "**⚙️ 设置 (Settings)**" → fill in two groups
 
 ### Updating & uninstalling (portable build)
 
-**Updating to a new version**:
-1. Download the new zip (filename includes the version number — grab the latest);
-2. Best practice: extract into a **new folder**; you may also extract over the old folder and relaunch — **from v0.16.1 on, missing question sets/personas are filled in automatically** (your existing files and customisations are never overwritten);
-3. To keep your practice history and API keys: copy `data/`, `.env` and `config.local.yaml` from the old folder into the new one (skip this for a fresh start).
+**Lossless upgrade (keep your practice history & all settings)**: updating only swaps the program itself — new personas / question sets arrive automatically. Carry your data over with either method:
+
+- **The four things worth keeping**: `data/` (all practice records: sessions, favourites, error book, reports, check-in stats), `.env` (API key & endpoints), `config.local.yaml` (settings changed in ⚙️ Settings: model, voices, phone access), and any files you added under `materials/` (imported resume `profile.md`, custom question banks / personas).
+- **Method A · safest (recommended)**: extract the new zip into a **new folder** → copy `data/`, `.env`, `config.local.yaml` (and your extra `materials/` files) from the old folder → launch the new program (first start auto-fills new question sets / personas) → verify: version in ⚙️ Settings, old records on the home page.
+- **Method B · easiest**: extract the new zip **over the old folder** and relaunch — from v0.16.1 on, missing sets/personas are filled in automatically and **none of your files are overwritten**; history, keys, settings and custom material all stay.
+- **Avoid**: deleting the old folder and re-extracting = a reset (progress and settings gone together). Fine for a clean restart — otherwise back up the four items above first.
+- 📖 Illustrated walkthrough: user guide section "6 更新与无损升级" ([docs/USER-GUIDE.pdf](docs/USER-GUIDE.pdf)).
 
 **Complete uninstall (Windows / macOS)**: this is a green portable build — program, API keys, practice data, logs and the browser cache **all live inside the app folder** (on Windows even the WebView cache is stored in `webview_data/` inside the folder). **Delete the folder = fully uninstalled**; nothing is written to your C: drive user directories (e.g. AppData). Back up `data/` first if you want to keep your records; delete any desktop shortcut you created.
 
